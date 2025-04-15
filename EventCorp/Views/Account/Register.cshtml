@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Registro de usuario";
+}
+
+@using EventCorp.ViewModel
+@model RegisterViewModel
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
+        <div class="text-center">
+            <h2 class="fw-bold text-primary">Registro de nuevos usuarios</h2>
+            <p class="text-muted">Crea una cuenta para acceder a EventCorp</p>
+        </div>
+
+        <form action="/Account/Register" method="post">
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="fw-semibold">Correo electrónico</label>
+                <input asp-for="Email" class="form-control" placeholder="Ingresa tu correo" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FullName" class="fw-semibold">Nombre completo</label>
+                <input asp-for="FullName" class="form-control" placeholder="Ingresa tu nombre completo" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SelectedRole" class="fw-semibold">Tipo de cuenta</label>
+                <select asp-for="SelectedRole" asp-items="Model.RoleOptions" class="form-select">
+                    <option value="">-- Selecciona tu rol --</option>
+                </select>
+                <span asp-validation-for="SelectedRole" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="fw-semibold">Contraseña</label>
+                <input asp-for="Password" class="form-control" placeholder="Crea una contraseña" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ConfirmPassword" class="fw-semibold">Repetir contraseña</label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirma tu contraseña" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Registrarse</button>
+
+        </form>
+
+        <div class="text-center mt-3">
+            <p class="text-muted">¿Ya estás registrado?</p>
+            <a href="/Account/Login" class="btn btn-outline-secondary btn-sm">Inicia sesión</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    }

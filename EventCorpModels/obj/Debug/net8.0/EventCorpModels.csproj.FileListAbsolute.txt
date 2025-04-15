@@ -1,0 +1,12 @@
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\bin\Debug\net8.0\EventCorpModels.deps.json
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\bin\Debug\net8.0\EventCorpModels.dll
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\bin\Debug\net8.0\EventCorpModels.pdb
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.csproj.AssemblyReference.cache
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.AssemblyInfoInputs.cache
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.AssemblyInfo.cs
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.csproj.CoreCompileInputs.cache
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.dll
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\refint\EventCorpModels.dll
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\EventCorpModels.pdb
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorpModels\obj\Debug\net8.0\ref\EventCorpModels.dll
