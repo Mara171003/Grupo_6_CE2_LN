@@ -10,10 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CE2DbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Simplified Identity configuration
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
-    // Password settings
     options.Password.RequireDigit = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
@@ -29,7 +27,6 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("ADMIN"));
 });
 
-// Cookie configuration
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
@@ -62,7 +59,6 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-// Combine all initialization into a single scope
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -82,7 +78,6 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "An error occurred during initialization");
     }
 }
-
 
 app.MapControllerRoute(
     name: "default",

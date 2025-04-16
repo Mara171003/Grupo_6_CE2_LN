@@ -6,9 +6,6 @@ namespace EventCorpModels
 {
     public class User : IdentityUser
     {
-        [Key] 
-        public int UserId { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string NombreCompleto { get; set; }

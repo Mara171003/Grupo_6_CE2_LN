@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EventCorp.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "Administrador")]
     public class AdminController : Controller
     {
         private readonly UserManager<User> _userManager;

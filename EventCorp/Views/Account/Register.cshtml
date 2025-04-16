@@ -1,9 +1,9 @@
-﻿@{
+﻿@using EventCorp.ViewModel
+@{
     Layout = "_Layout";
     ViewData["Title"] = "Registro de usuario";
 }
 
-@using EventCorp.ViewModel
 @model RegisterViewModel
 
 <div class="container d-flex justify-content-center mt-5">
@@ -13,38 +13,70 @@
             <p class="text-muted">Crea una cuenta para acceder a EventCorp</p>
         </div>
 
-        <form action="/Account/Register" method="post">
+        <form asp-action="Register" asp-controller="Account" method="post">
+            @Html.AntiForgeryToken()
+
             <div asp-validation-summary="All" class="alert alert-danger"></div>
 
             <div class="form-group mb-3">
-                <label asp-for="Email" class="fw-semibold">Correo electrónico</label>
-                <input asp-for="Email" class="form-control" placeholder="Ingresa tu correo" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="UserName" class="fw-semibold">Nombre de usuario</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input asp-for="UserName" class="form-control" placeholder="Ingresa tu nombre de usuario" required autofocus />
+                </div>
+                <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
 
             <div class="form-group mb-3">
                 <label asp-for="FullName" class="fw-semibold">Nombre completo</label>
-                <input asp-for="FullName" class="form-control" placeholder="Ingresa tu nombre completo" />
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                    <input asp-for="FullName" class="form-control" placeholder="Ingresa tu nombre completo" required />
+                </div>
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="Email" class="fw-semibold">Correo electrónico</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder="Ingresa tu correo" required />
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PhoneNumber" class="fw-semibold">Teléfono</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Ingresa tu número de teléfono" required />
+                </div>
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
                 <label asp-for="SelectedRole" class="fw-semibold">Tipo de cuenta</label>
-                <select asp-for="SelectedRole" asp-items="Model.RoleOptions" class="form-select">
-                    <option value="">-- Selecciona tu rol --</option>
+                <select asp-for="SelectedRole" asp-items="ViewBag.RoleOptions" class="form-control" required>
+                    <option value="">Seleccione un rol</option>
                 </select>
                 <span asp-validation-for="SelectedRole" class="text-danger"></span>
             </div>
 
             <div class="form-group mb-3">
                 <label asp-for="Password" class="fw-semibold">Contraseña</label>
-                <input asp-for="Password" class="form-control" placeholder="Crea una contraseña" />
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Crea una contraseña" required />
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
             <div class="form-group mb-3">
                 <label asp-for="ConfirmPassword" class="fw-semibold">Repetir contraseña</label>
-                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirma tu contraseña" />
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirma tu contraseña" required />
+                </div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
@@ -60,6 +92,7 @@
 </div>
 
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
-    }
+}

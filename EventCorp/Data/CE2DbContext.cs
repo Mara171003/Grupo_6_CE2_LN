@@ -17,9 +17,9 @@ namespace EventCorpModels.Data
             base.OnModelCreating(builder);
 
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole { Id = "1", Name = "ADMIN", NormalizedName = "ADMIN" },
-                new IdentityRole { Id = "2", Name = "ORGANIZADOR", NormalizedName = "ORGANIZADOR" },
-                new IdentityRole { Id = "3", Name = "USER", NormalizedName = "USER" }
+                new IdentityRole { Id = "1", Name = "Administrador", NormalizedName = "ADMINISTRADOR" },
+                new IdentityRole { Id = "2", Name = "Organizador", NormalizedName = "ORGANIZADOR" },
+                new IdentityRole { Id = "3", Name = "Usuario", NormalizedName = "USUARIO" }
             );
 
             builder.Entity<User>()

@@ -5,37 +5,36 @@ namespace EventCorp.ViewModel
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Username is required")]
-        [Display(Name = "Username")]
+        [Required(ErrorMessage = "El nombre de usuario es obligatorio")]
+        [Display(Name = "Nombre de usuario")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Full name is required")]
-        [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "El nombre completo es obligatorio")]
+        [Display(Name = "Nombre completo")]
         public string FullName { get; set; }
 
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid email address")]
-        [Display(Name = "Email")]
+        [Required(ErrorMessage = "El correo electrónico es obligatorio")]
+        [EmailAddress(ErrorMessage = "Correo electrónico inválido")]
+        [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Phone number is required")]
-        [Phone(ErrorMessage = "Invalid phone number")]
-        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "El número de teléfono es obligatorio")]
+        [Phone(ErrorMessage = "Número de teléfono inválido")]
+        [Display(Name = "Número de teléfono")]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
+        [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirmar contraseña")]
+        [Compare("Password", ErrorMessage = "La contraseña y la confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Role is required")]
-        [Display(Name = "Role")]
+        [Required(ErrorMessage = "El rol es obligatorio")]
         public string SelectedRole { get; set; }
 
         public List<SelectListItem> RoleOptions => new List<SelectListItem> { 

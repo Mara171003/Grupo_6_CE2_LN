@@ -15,10 +15,9 @@ namespace EventCorpModels.Data
             {
                 context.Database.EnsureCreated();
 
-                // Create default roles
-                string[] roleNames = { "ADMIN", "ORGANIZADOR", "USER" };
+            string[] roleNames = { "ADMINISTRADOR", "ORGANIZADOR", "USUARIO" };
 
-                foreach (var roleName in roleNames)
+            foreach (var roleName in roleNames)
                 {
                     var roleExist = await roleManager.RoleExistsAsync(roleName);
                     if (!roleExist)
@@ -27,7 +26,6 @@ namespace EventCorpModels.Data
                     }
                 }
 
-                // Create admin user
                 var adminEmail = "admin@inventory.com";
                 var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
@@ -50,7 +48,6 @@ namespace EventCorpModels.Data
                     }
                 }
 
-                // Create organizer user
                 var organizerEmail = "organizador@inventory.com";
                 var organizerUser = await userManager.FindByEmailAsync(organizerEmail);
 
@@ -73,7 +70,6 @@ namespace EventCorpModels.Data
                     }
                 }
 
-                // Create regular user
                 var userEmail = "user@inventory.com";
                 var regularUser = await userManager.FindByEmailAsync(userEmail);
 

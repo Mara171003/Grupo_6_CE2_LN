@@ -174,4 +174,5 @@ C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\refint\EventCorp.
 C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\EventCorp.pdb
 C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\EventCorp.genruntimeconfig.cache
 C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\ref\EventCorp.dll
+C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\EventCorp.sourcelink.json
 C:\Users\XPC\Desktop\Grupo_6_CE2_LN\EventCorp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

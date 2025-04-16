@@ -1,36 +1,58 @@
-﻿@{
+﻿@using EventCorp.ViewModel
+@{
     Layout = "_Layout";
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Iniciar sesión";
 }
 
-<div class="container mt-5">
-    <div class="text-center mb-4">
-        <h2 class="fw-bold">Inicio de sesión</h2>
-        <p class="text-muted">Accede a tu cuenta para continuar</p>
-    </div>
+@model LoginViewModel
 
-    <div class="card shadow-lg mx-auto" style="max-width: 400px;">
-        <div class="card-body p-4">
-            <form action="/Account/Login" method="post">
-                @Html.AntiForgeryToken()
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-lg p-4" style="max-width: 450px; width: 100%;">
+        <div class="text-center">
+            <h2 class="fw-bold text-primary">Iniciar sesión</h2>
+            <p class="text-muted">Accede con tu cuenta de EventCorp</p>
+        </div>
 
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label fw-semibold">Correo electrónico</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingresa tu email" name="Email" required>
+        <form asp-action="Login" asp-controller="Account" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="fw-semibold">Correo electrónico</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder="Ingresa tu correo o usuario" required autofocus />
                 </div>
-
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label fw-semibold">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresa tu contraseña" name="Password" required>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100 fw-bold">Iniciar sesión</button>
-            </form>
-
-            <div class="text-center mt-3">
-                <p class="text-muted">¿Aún no tienes cuenta?</p>
-                <a href="/Account/Register" class="btn btn-outline-secondary btn-sm">Registrarse</a>
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="fw-semibold">Contraseña</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Ingresa tu contraseña" required />
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input asp-for="RememberMe" class="form-check-input" type="checkbox" />
+                <label asp-for="RememberMe" class="form-check-label">Recordarme</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-bold">Iniciar sesión</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p class="text-muted">¿No tienes una cuenta?</p>
+            <a href="/Account/Register" class="btn btn-outline-secondary btn-sm">Regístrate aquí</a>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

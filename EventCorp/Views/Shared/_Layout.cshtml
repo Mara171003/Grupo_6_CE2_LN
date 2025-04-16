@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using EventCorpModels
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,7 +23,15 @@
                 <ul class="navbar-nav ms-auto">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @if (User.IsInRole("ADMIN"))
+                        var user = await UserManager.GetUserAsync(User);
+                        if (user != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-white fw-bold">Bienvenido, @user.UserName</span>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Administrador"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-white fw-semibold" href="/Admin/UserAdministration">
@@ -27,6 +39,7 @@
                                 </a>
                             </li>
                         }
+
                         <li class="nav-item">
                             <form action="/Account/Logout" method="post" id="logoutForm">
                                 @Html.AntiForgeryToken()

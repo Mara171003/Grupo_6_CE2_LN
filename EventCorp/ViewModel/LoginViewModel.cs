@@ -4,16 +4,16 @@ namespace EventCorp.ViewModel
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Email or Username is required")]
-        [Display(Name = "Email / Username")]
+        [Required(ErrorMessage = "El correo electrónico es obligatorio")]
+        [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Recordarme")]
         public bool RememberMe { get; set; }
     }
 }
