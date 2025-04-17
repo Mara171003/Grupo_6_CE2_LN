@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EventCorp.ViewModels.CategoryViewModel>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Categorías";
+}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fw-bold text-primary">Listado de Categorías</h2>
+            <a href="@Url.Action("Create", "Category")" class="btn btn-success">
+                <i class="fas fa-plus-circle"></i> Nueva Categoría
+            </a>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info text-center">
+                No hay categorías registradas.
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Registrado</th>
+                        <th>Usuario</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Descripcion</td>
+                            <td>
+                                <span class="badge bg-@(item.Estado ? "success" : "danger")">
+                                    @(item.Estado ? "Activo" : "Inactivo")
+                                </span>
+                            </td>
+                            <td>@item.FechaRegistro.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@item.UsuarioNombre</td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", "Category", new { id = item.Id })" class="btn btn-warning btn-sm me-1">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="@Url.Action("Delete", "Category", new { id = item.Id })" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

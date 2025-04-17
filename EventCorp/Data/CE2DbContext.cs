@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using EventCorp.Models;
 
 namespace EventCorpModels.Data
 {
@@ -11,6 +12,7 @@ namespace EventCorpModels.Data
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

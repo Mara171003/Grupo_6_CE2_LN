@@ -1,0 +1,48 @@
+﻿@model EventCorp.ViewModels.CategoryViewModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Eliminar Categoría";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%;">
+        <div class="text-center">
+            <h2 class="fw-bold text-danger">Eliminar Categoría</h2>
+            <p class="text-muted">¿Estás seguro que deseas eliminar esta categoría?</p>
+        </div>
+
+        <div class="mb-3">
+            <strong>Nombre:</strong> @Model.Nombre
+        </div>
+        <div class="mb-3">
+            <strong>Descripción:</strong> @Model.Descripcion
+        </div>
+        <div class="mb-3">
+            <strong>Estado:</strong>
+            <span class="badge bg-@(Model.Estado ? "success" : "danger")">
+                @(Model.Estado ? "Activo" : "Inactivo")
+            </span>
+        </div>
+        <div class="mb-3">
+            <strong>Registrado:</strong> @Model.FechaRegistro.ToString("dd/MM/yyyy HH:mm")
+        </div>
+        <div class="mb-3">
+            <strong>Usuario:</strong> @Model.UsuarioNombre
+        </div>
+
+        <form asp-action="Delete" asp-controller="Category" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+
+            <div class="d-flex justify-content-between">
+                <a href="@Url.Action("Index", "Category")" class="btn btn-outline-secondary">
+                    Cancelar
+                </a>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Eliminar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

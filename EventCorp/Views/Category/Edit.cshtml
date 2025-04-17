@@ -1,0 +1,53 @@
+﻿@model EventCorp.ViewModels.CategoryViewModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Editar Categoría";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%;">
+        <div class="text-center">
+            <h2 class="fw-bold text-primary">Editar Categoría</h2>
+            <p class="text-muted">Modifica los datos de la categoría seleccionada</p>
+        </div>
+
+        <form asp-action="Edit" asp-controller="Category" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Nombre" class="fw-semibold">Nombre</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                    <input asp-for="Nombre" class="form-control" />
+                </div>
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Descripcion" class="fw-semibold">Descripción</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                    <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
+                </div>
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input asp-for="Estado" class="form-check-input" />
+                <label asp-for="Estado" class="form-check-label">¿Activa?</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-bold">
+                Guardar Cambios
+            </button>
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="@Url.Action("Index", "Category")" class="btn btn-outline-secondary btn-sm">Volver al listado</a>
+        </div>
+    </div>
+</div>
