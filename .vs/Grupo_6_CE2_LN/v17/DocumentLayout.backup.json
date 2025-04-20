@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\smerl\\source\\repos\\Grupo_6_CE2_LN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|c:\\users\\smerl\\source\\repos\\grupo_6_ce2_ln\\eventcorp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|solutionrelative:eventcorp\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|c:\\users\\smerl\\source\\repos\\grupo_6_ce2_ln\\eventcorp\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|solutionrelative:eventcorp\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|c:\\users\\smerl\\source\\repos\\grupo_6_ce2_ln\\eventcorp\\views\\category\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4CBDF542-D9D2-4406-873F-2DF4E4A731B7}|EventCorp\\EventCorp.csproj|solutionrelative:eventcorp\\views\\category\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,34 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\smerl\\source\\repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Index.cshtml",
-              "RelativeDocumentMoniker": "EventCorp\\Views\\Category\\Index.cshtml",
-              "ToolTip": "C:\\Users\\smerl\\source\\repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Index.cshtml",
-              "RelativeToolTip": "EventCorp\\Views\\Category\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T01:20:16.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\smerl\\Source\\Repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Edit.cshtml",
-              "RelativeDocumentMoniker": "EventCorp\\Views\\Category\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\smerl\\Source\\Repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Edit.cshtml",
-              "RelativeToolTip": "EventCorp\\Views\\Category\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T01:18:07.618Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -57,6 +27,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\smerl\\Source\\Repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EventCorp\\Views\\Category\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\smerl\\Source\\Repos\\Grupo_6_CE2_LN\\EventCorp\\Views\\Category\\Delete.cshtml",
+              "RelativeToolTip": "EventCorp\\Views\\Category\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T01:22:02.63Z",
+              "EditorCaption": ""
             }
           ]
         }

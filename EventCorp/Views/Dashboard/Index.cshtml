@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Dashboard Admin";
+}
+
+<h2>Dashboard Administrador</h2>
+
+<div>
+    <p><strong>Total de Eventos:</strong> @ViewBag.TotalEventos</p>
+    <p><strong>Usuarios Activos:</strong> @ViewBag.TotalUsuarios</p>
+    <p><strong>Asistentes este mes:</strong> @ViewBag.AsistentesMes</p>
+
+    <h4>Top 5 Eventos más Populares</h4>
+    <ul>
+        @foreach (var evento in ViewBag.TopEventos)
+        {
+            <li>@evento.Titulo - @evento.Total asistentes</li>
+        }
+    </ul>
+</div>

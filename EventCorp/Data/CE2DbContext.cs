@@ -13,7 +13,8 @@ namespace EventCorpModels.Data
 
         public DbSet<User> User { get; set; }
         public DbSet<Category> Category { get; set; }
-
+        public DbSet<Inscripcion> Inscripciones { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

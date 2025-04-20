@@ -1,0 +1,46 @@
+﻿@model List<EventCorp.Models.Inscripcion>
+
+@{
+    ViewData["Title"] = "Gestión de Asistentes";
+}
+
+<h2>Asistentes del Evento @ViewBag.EventoId</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensaje"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Usuario</th>
+            <th>Asistió</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var insc in Model)
+        {
+            <tr>
+                <td>@insc.Id</td>
+                <td>@insc.UserId</td>
+                <td>@(insc.Asistio ? "Sí" : "No")</td>
+                <td>
+                    @if (!insc.Asistio)
+                    {
+                        <form asp-action="MarcarAsistencia" method="post">
+                            <input type="hidden" name="id" value="@insc.Id" />
+                            <button type="submit" class="btn btn-sm btn-success">Marcar asistencia</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-success">✔</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
