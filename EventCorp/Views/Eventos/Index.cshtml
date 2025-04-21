@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EventCorp.Models.Evento>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<h1>Lista de Eventos</h1>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Crear nuevo evento</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Cupo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var evento in Model)
+        {
+            <tr>
+                <td>@evento.Titulo</td>
+                <td>@evento.Fecha.ToString("yyyy-MM-dd")</td>
+                <td>@evento.Hora</td>
+                <td>@evento.CupoMaximo</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@evento.Id" class="btn btn-sm btn-info">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@evento.Id" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@evento.Id" class="btn btn-sm btn-danger">Eliminar</a>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form asp-controller="Inscripciones" asp-action="Inscribirse" method="post">
+                            <input type="hidden" name="eventoId" value="@evento.UsuarioId" />
+                            <button type="submit" class="btn btn-success">Inscribirme</button>
+                        </form>
+                    }
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger">@TempData["Error"]</div>
+                    }
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["Success"]</div>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

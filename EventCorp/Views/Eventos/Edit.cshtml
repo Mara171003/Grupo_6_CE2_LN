@@ -1,0 +1,12 @@
+﻿@model EventCorp.Models.Evento
+@{
+    ViewData["Title"] = "Editar Evento";
+}
+
+<h1>Editar Evento</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <!-- Reutilizamos los mismos campos del Create -->
+    @Html.Partial("Create", Model)
+</form>

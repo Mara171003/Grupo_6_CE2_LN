@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EventCorp.Models;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -12,5 +13,7 @@ namespace EventCorpModels
 
         [Required]
         public string SelectedRole { get; set; }
+
+        public ICollection<Inscripcion> Inscripciones { get; set; }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model EventCorp.Models.Evento
+@{
+    ViewData["Title"] = "Crear Evento";
+}
+
+<h1>Crear Evento</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Titulo"></label>
+        <input asp-for="Titulo" class="form-control" />
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <textarea asp-for="Descripcion" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoriaId"></label>
+        <select asp-for="CategoriaId" class="form-control" asp-items="@(ViewBag.CategoriaId)">
+            <option value="">-- Seleccione una categoría --</option>
+        </select>
+        <span asp-validation-for="CategoriaId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Fecha"></label>
+        <input asp-for="Fecha" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Hora"></label>
+        <input asp-for="Hora" class="form-control" type="time" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Duracion">Duración (minutos)</label>
+        <input asp-for="Duracion" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ubicacion"></label>
+        <input asp-for="Ubicacion" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CupoMaximo"></label>
+        <input asp-for="CupoMaximo" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
